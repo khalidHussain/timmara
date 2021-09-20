@@ -4,14 +4,20 @@ const { toJSON } = require('./plugins');
 const orderSchema = mongoose.Schema(
   {
     buyer: {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'buyer',
+      required: true,
+    },
+    status: {
+      type: String,
+      default: 'created',
+      enum: ['created', 'completed'],
       required: true,
     },
     products: [
       {
         product: {
-          type: mongoose.SchemaType.ObjectId,
+          type: mongoose.Schema.Types.ObjectId,
           ref: 'product',
           required: true,
         },

@@ -12,7 +12,7 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     sellerId: {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'seller',
       required: true,
     },
