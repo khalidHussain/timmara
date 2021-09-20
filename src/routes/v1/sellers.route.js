@@ -3,7 +3,7 @@ const { sellerController } = require('../../controllers');
 
 const router = express.Router();
 
-router.route('/').get(sellerController.getseller);
+router.route('/').get(sellerController.getsellers);
 router.route('/').post(sellerController.createseller);
 router.route('/:sellerId').get(sellerController.getseller);
 router.route('/:sellerId').put(sellerController.updateseller);
