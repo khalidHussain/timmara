@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { toJSON } = require('./plugins');
+const { toJSON, paginate } = require('./plugins');
 
 const sellerSchema = mongoose.Schema(
   {
@@ -21,6 +21,7 @@ const sellerSchema = mongoose.Schema(
 
 // add plugin that converts mongoose to json
 sellerSchema.plugin(toJSON);
+sellerSchema.plugin(paginate);
 
 /**
  * @typedef Token
