@@ -19,7 +19,7 @@ const create = async (data) => {
  * @returns {Array}
  */
 const getAll = async (filter, options) => {
-  const products = await Products.paginate(filter, options);
+  const products = await Products.paginate(filter, { ...options, populate: { 'sellerId': ['id', 'name'] }});
   if (!products) {
     throw new ApiError(httpStatus.NOT_FOUND, 'No Data Found');
   }
